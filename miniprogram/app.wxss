@@ -1,0 +1,57 @@
+/**app.wxss**/
+.container{
+    margin-bottom: 20;
+    display:block;
+}
+.flex-row{
+    display:flex;
+    background: white;
+    justify-content: space-between;
+}
+.flex-column{
+    margin-top: 20rpx;
+    margin-bottom: 20rpx;
+    background:white;
+}
+.flex-view-text-code{
+    color: black;
+    background:white;
+    padding: 8rpx;
+    margin-right: 10rpx;
+    margin-top: 5rpx;
+    font-size: 120px;
+    align-content: center;
+}
+.flex-view-text-name{
+    color: black;
+    background:white;
+    padding: 8rpx;
+    margin-right: 10rpx;
+    margin-top: 5rpx;
+    font-size: 60px;
+    align-content: center;
+}
+.flex-view-arrow{
+    color: rgb(240, 240, 240);
+    background:white;
+    padding: 8rpx;
+    margin-right: 10rpx;
+    margin-top: 5rpx;
+    font-size: 120px;
+}
+
+.text{
+    color:black;
+    background:white;
+    padding: 8rpx;
+    font-size: 16px;
+}
+
+.flex-row-bottom{
+  width: 100%;
+  position: fixed;
+  bottom:10px;
+  display: flex;
+  justify-content: center;
+
+}

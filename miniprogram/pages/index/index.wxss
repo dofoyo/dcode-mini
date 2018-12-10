@@ -1,0 +1,10 @@
+/**index.wxss**/
+
+page {
+  background: #f6f6f6;
+}
+
+.card {
+ font-size: 80px
+}
+

@@ -1,0 +1,20 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- 显示数据编码 -->
+  <view class="flex-row">
+        <view class="flex-view-arrow" bindtap='minIndex'>{{left}}</view>
+        <view class="flex-view-text-code" bindtap='showName'>{{thecode}}</view>
+        <view class="flex-view-arrow" bindtap='addIndex'>{{right}}</view>
+  </view>
+  <view class="flex-row">
+        <view class="flex-view-arrow"></view>
+        <view class="flex-view-text-name" wx:if="{{isShowName}}">{{thename}}</view>
+        <view class="flex-view-arrow"></view>
+  </view>
+
+   <view class="flex-row-bottom">
+        <view class="text" hidden="true">顺序: <switch checked bindchange="switchChange"/></view>
+        <view class="text"></view>
+        <view class="text" wx:if="{{times!=null}}" bindtap='reset'>用时{{times}}秒, 点击此处重新开始计时。</view>
+  </view> 
+</view>
