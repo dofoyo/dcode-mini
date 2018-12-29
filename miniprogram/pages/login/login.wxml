@@ -1,0 +1,12 @@
+<view class="flex-wrp" style="height:300px;flex-direction:column">
+  <view class="td" wx:if="{{avatarUrl}}" >
+      <image style="width: 60px; height: 60px;" src="{{avatarUrl}}"></image>
+  </view>
+  <view class="td" wx:if="{{nickName}}" >
+      <text style="font-size: 12px">{{nickName}}</text>
+  </view>
+  <view class="td" wx:if="{{!nickName}}">
+      <button type="warn" open-type='getUserInfo' bindgetuserinfo='doLogin'>微信登录</button>
+  </view>
+</view>
+

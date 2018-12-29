@@ -12,9 +12,15 @@
         <view class="flex-view-arrow"></view>
   </view>
 
+  <view class="flex-row">
+        <view class="text"></view>
+        <view  style="font-size: 10px" wx:if="{{isShowNote}}">{{thenote}}</view>
+        <view class="text"></view>
+  </view>
+
    <view class="flex-row-bottom">
         <view class="text" hidden="true">顺序: <switch checked bindchange="switchChange"/></view>
         <view class="text"></view>
-        <view class="text" wx:if="{{times!=null}}" bindtap='reset'>用时{{times}}秒, 点击此处重新开始计时。</view>
+        <view style="font-size: 11px" wx:if="{{times!=null}}" bindtap='reset'>用时 {{times}}秒, 第 {{theOrder}} 名, 点击[重新开始]。</view>
   </view> 
 </view>

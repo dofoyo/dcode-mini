@@ -3,20 +3,23 @@ const app = getApp()
 
 Page({
   data: {
-    thecode: '',
-    thename: '',
+    thecode: '-',
+    thename: '-',
     theimageurl: '',
+    thenote:'请点击 < 或 > 箭头开始练习,点击中间的数字可以得到提示。',
     isShowName: false,
+    isShowNote: true,
     isOrder: true,
     startTime: null,
     endTime: null,
     times: null,
+    theOrder:null,
     index: 0,
     left: '<',
     right: '>',
     list: [{
-        "code": "",
-        "name": ""
+        "code": "-",
+        "name": "-"
       },
       {
         "code": "0",
@@ -170,6 +173,9 @@ Page({
   },
 
   changeIndex: function(i) {
+    if(this.data.isShowNote){
+      this.setData({isShowNote: false});
+    }
     if(this.data.times!=null){
       return;
     }
@@ -196,6 +202,9 @@ Page({
       thename: item.name
     });
     this.setData({
+      theimageurl: "/images/dcode" + item.code + ".png"
+    });
+    this.setData({
       isShowName: false
     });
 
@@ -213,6 +222,9 @@ Page({
       this.setData({
         endTime: null
       });
+
+      this.updateRecord(dateDiff);
+
     }
 
   },
@@ -235,5 +247,26 @@ Page({
     this.setData({
       times: null
     });
+  },
+
+  updateRecord: function (second) {
+    var vm = this
+    var openId = wx.getStorageSync('OPENID')
+    wx.request({
+      url: app.globalData.url + "updateRecord?openid=" + openId + "&second=" + second,
+      method: "POST",
+      success: function (result) {
+        //console.log(result)
+        //return result.data.content
+        vm.setData({
+          theOrder: result.data.content
+        })
+      },
+      fail: function () {
+        vm.setData({
+          theOrder: '无'
+        })
+      }
+    })
   }
 })
